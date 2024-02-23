@@ -19,10 +19,10 @@ class PluginSpController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
-    {
-        return view('landing.fitur.create');
-    }
+    // public function create()
+    // {
+    //     return view('landing.fitur.create');
+    // }
 
     /**
      * Store a newly created resource in storage.
@@ -55,27 +55,27 @@ class PluginSpController extends Controller
      * Display the specified resource.
      */
     public function showPosts()
-{
-    $posts = PluginSp::all();
-    return view('pages.diko_sp.plug.list', compact('posts'));
-}
+    {
+        $posts = PluginSp::all();
+        return view('pages.diko_sp.plug.list', compact('posts'));
+    }
 
-public function preview($id)
-{
-    $posts = PluginSp::all();  // Ambil semua post
-    $post = PluginSp::find($id);  // Ambil post yang sesuai dengan $id
-    return view('pages.diko_sp.plug.preview', compact('post', 'posts'));
-}
+    public function preview($id)
+    {
+        $posts = PluginSp::all();  // Ambil semua post
+        $post = PluginSp::find($id);  // Ambil post yang sesuai dengan $id
+        return view('pages.diko_sp.plug.preview', compact('post', 'posts'));
+    }
 
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit($id)
-    {
-        $post = PluginSp::find($id);
-        return view('pages.diko_sp.plug.edit', compact('post'));
-    }
+    // public function edit($id)
+    // {
+    //     $post = PluginSp::find($id);
+    //     return view('pages.diko_sp.plug.edit', compact('post'));
+    // }
 
     /**
      * Update the specified resource in storage.
@@ -118,7 +118,3 @@ public function preview($id)
         return redirect('/sp/plugin/list')->with('success', 'Plugin has been deleted.');
     }
 }
-
-
-
-

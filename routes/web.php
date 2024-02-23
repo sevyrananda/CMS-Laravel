@@ -28,14 +28,17 @@ use App\Http\Controllers\GetImagesController;
 |
 */
 
-Route::get('/storage/{filename}',[GetImagesController::class, 'displayImage'])->name('image.displayImage');
+Route::get('/storage/{filename}',
+[GetImagesController::class,
+'displayImage'])->name('image.displayImage');
 
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/register', [AuthController::class, 'registerPost'])->name('register');
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login', [AuthController::class, 'loginPost'])->name('login');
 Route::get('/', [ProdukController::class, 'landing'])->name('pagelanding.preview');
-Route::get('/produk/preview/{id}/{selection}', [ProdukController::class, 'preview'])->name('produk.preview');
+Route::get('/produk/preview/{id}/{selection}',
+[ProdukController::class, 'preview'])->name('produk.preview');
 
 Route::middleware(['auth'])->group(function () {
     Route::delete('/logout', [AuthController::class, 'logout'])->name('logout');
@@ -115,7 +118,6 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/sp/fitur/store', [FiturSpController::class, 'store'])->name('sp.fitur.store');
     Route::get('/sp/fitur/edit/{id}', [FiturSpController::class, 'edit'])->name('sp.fitur.edit');
     Route::put('/sp/fitur/update/{id}', [FiturSpController::class, 'update'])->name('sp.fitur.update');
-    // Route::get('/sp/fitur/preview/{id}', [FiturSpController::class, 'preview'])->name('sp.fitur.preview');
     Route::delete('/sp/fitur/destroy/{id}', [FiturSpController::class, 'destroy'])->name('sp.fitur.destroy');
     //section 2
     Route::get('/sp/fitur2/list', [FiturSp2Controller::class, 'index'])->name('sp.fitur2');
@@ -151,6 +153,6 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::get('/sitemap.xml', function () {
-    $path = public_path('public/sitemap.xml'); // Sesuaikan dengan path ke file sitemap.xml Anda
+    $path = public_path('public/sitemap.xml');
     return response()->file($path);
 })->name('sitemap');

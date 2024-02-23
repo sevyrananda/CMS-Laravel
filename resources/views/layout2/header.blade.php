@@ -11,7 +11,9 @@
                     <ul class="dropdown-menu">
                         @foreach ($products as $product)
                             <li>
-                                <a class="nav-link scrollto" href="{{ route('produk.preview', ['id' => $product->id, 'selection' => $product->preview_selection]) }}">
+                                <a class="nav-link scrollto"
+                                href="{{ route('produk.preview',
+                                ['id' => $product->id, 'selection' => $product->preview_selection]) }}">
                                     {{ $product->nama_produk }}
                                 </a>
                             </li>

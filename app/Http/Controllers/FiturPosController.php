@@ -43,7 +43,7 @@ class FiturPosController extends Controller
         return redirect('/pos/fitur/list')->with('success', 'Fitur Section 1 Berhasil Ditambahkan.');
     }
 
-    public function show($id)
+    public function show()
     {
         $posts = FiturPos::all();
         return view('pages.diko_pos.fitur.list', compact('posts'));

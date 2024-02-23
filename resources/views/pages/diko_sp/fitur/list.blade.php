@@ -17,7 +17,7 @@
                     {{-- Fitur Section 1 --}}
                     {{-- <div class="card">
                         <div class="card-header">
-                            <h4>Fitur Section 1.1</h4>
+                            <h4>Fitur Section 1</h4>
                         </div>
                         <div class="card-body">
                             <div class="float-left">
